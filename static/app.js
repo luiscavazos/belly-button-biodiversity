@@ -31,11 +31,14 @@ d3.json("static/samples.json").then(data => {
                 b:30
             }
         }
+        Plotly.newPlot("bar", bar, layout);
     };
-Plotly.newPlot("bar", bar, layout);
 
 
 
+function optionChanged(id) {
+    makePlots(id)
+}
 
 
 
@@ -49,6 +52,7 @@ function init() {
             drop.append("option").text(x).property("value");
             
         });
+        makePlots(data.names[0])
     })
 }
 
