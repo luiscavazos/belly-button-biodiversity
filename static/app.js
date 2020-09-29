@@ -18,21 +18,20 @@ d3.json("static/samples.json").then(data => {
             type: "bar",
             orientation : "h",
         };
-        var bar = [trace];
-        var layout = {
-            title: "Top 10 OTU",
-            yaxis: {
-                tickmode:"linear",
-            },
-            margin: { 
-                l:100,
-                r:100,
-                t:100,
-                b:30
-            }
+        var data1 = [trace];
+        //var layout = {
+          //  title: "Top 10 OTU",
+          //  yaxis: {
+          //      tickmode:"linear",
+          //  },
+          //  margin: { 
+          //      l:100,
+          //      r:100,
+          //      t:100,
+          //      b:30
+          //  }
         }
-        Plotly.newPlot("bar", bar, layout);
-    };
+    Plotly.newPlot("bar", data1);
 
 
 
