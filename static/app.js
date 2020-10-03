@@ -95,11 +95,12 @@ function init() {
     var drop = d3.select("#selDataset");
     d3.json("static/samples.json").then((data) =>{
         console.log(data)
-        data.names.forEach( x => {
-            drop.append("option").text(x).property("value");
+        data.names.forEach( sample => {
+            drop.append("option").text(sample).property("value", sample);
             
         });
-        makePlots(data.names[0])
+        makePlots(sample);
+        buildMetadata(sample);
     })
 }
 
