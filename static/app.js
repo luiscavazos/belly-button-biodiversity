@@ -1,8 +1,7 @@
 function makePlots(sample) {
 
 d3.json("static/samples.json").then(data => {
-    var samples = data.samples;
-    var resultsarray= samples.filter(x => x.id == sample);
+    var resultsarray= data.samples.filter(x => x.id == sample);
     var result = resultsarray[0]
     var ids = result.otu_id;
     var labels = result.otu_labels;
@@ -93,10 +92,8 @@ function buildMetadata(sample) {
 function init() {
     var drop = d3.select("#selDataset");
     d3.json("static/samples.json").then((data) =>{
-        console.log(data)
-        var test = data.metadata
-        console.log(test)
-        data.names.forEach( sample => {
+       sampleNames= data.names;
+       sampleNames.forEach( sample => {
             drop.append("option").text(sample).property("value", sample);
             
         });
@@ -106,7 +103,7 @@ function init() {
 }
 
 function optionChanged(newSample) {
-    //makePlots(newSample);
+    makePlots(newSample);
     buildMetadata(newSample);
 }
 
