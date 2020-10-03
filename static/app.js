@@ -2,7 +2,8 @@ function makePlots(sample) {
 
 d3.json("static/samples.json").then(data => {
     console.log(data)})
-
+    var test = data.metadata
+    console.log(test)
     var samples = data.samples;
     var resultsarray= samples.filter(x => x.id == sample);
     var result = resultsarray[0]
