@@ -1,8 +1,6 @@
 function makePlots(sample) {
 
 d3.json("static/samples.json").then(data => {
-    console.log(data)})
-    
     var samples = data.samples;
     var resultsarray= samples.filter(x => x.id == sample);
     var result = resultsarray[0]
@@ -41,7 +39,8 @@ d3.json("static/samples.json").then(data => {
         title:"Top 10 Bacteria Cultures Found",
         margin: { t:30, l: 150}
     };
-    Plotly.newPlot("bar", bar_data, barlayout);
+    Plotly.newPlot("bar", bar_data, barlayout)
+};
 
 function buildMetadata(sample) {
     d3.json("static/samples.json").then(data => {
@@ -101,7 +100,6 @@ function init() {
             drop.append("option").text(sample).property("value", sample);
             
         });
-        sample = 940
         makePlots(sample);
         buildMetadata(sample);
     })
