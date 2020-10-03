@@ -39,7 +39,7 @@ d3.json("static/samples.json").then(data => {
         margin: { t:30, l: 150}
     };
     Plotly.newPlot("bar", bar_data, barlayout)
-};
+});
 
 function buildMetadata(sample) {
     d3.json("static/samples.json").then(data => {
@@ -97,8 +97,8 @@ function init() {
             drop.append("option").text(sample).property("value", sample);
             
         });
-        makePlots(sample);
-        buildMetadata(sample);
+        makePlots(sampleNames[0]);
+        buildMetadata(sampleNames[0]);
     })
 }
 
