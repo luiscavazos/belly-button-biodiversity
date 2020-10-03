@@ -101,7 +101,8 @@ function init() {
             drop.append("option").text(sample).property("value", sample);
             
         });
-        //makePlots(sample);
+        sample = 940
+        makePlots(sample);
         buildMetadata(sample);
     })
 }
