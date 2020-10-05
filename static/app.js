@@ -27,7 +27,7 @@ d3.json("static/samples.json").then(data => {
     
     var bardata = [
         {
-            y: ids.slice(0,10).map(otuID =>`OTU ${otuID})`).reverse(),
+            y: ids.slice(0,10).map().reverse(),
             x: values.slice(0,10).reverse(),
             text: labels.slice(0,10).reverse(),
             type: "bar",
@@ -49,7 +49,7 @@ function Metadata(sample) {
         var result = array[0]
         var Panel = d3.select("#sample-metadata");
         Panel.html("");
-        Object.defineProperties(result).forEach(([key,value])=> {
+        Object.entries(result).forEach(([key,value])=> {
             Panel.append("h6").text(`${key}: ${value}`);
         });
 
