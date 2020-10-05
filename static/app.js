@@ -35,7 +35,7 @@ d3.json("static/samples.json").then(data => {
         }
     ]
     var barlayout = {
-        title:"Top 10 Bacteria Cultures Found",
+        title:"Top 10 Bacterias Found in a Bellybutton",
         margin: { t:30, l: 150}
     };
     Plotly.newPlot("bar", bardata, barlayout)
