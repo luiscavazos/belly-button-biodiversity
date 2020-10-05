@@ -27,7 +27,7 @@ d3.json("static/samples.json").then(data => {
     
     var bardata = [
         {
-            y: ids.slice(0,10).map().reverse(),
+            y: ids.slice(0,10).reverse(),
             x: values.slice(0,10).reverse(),
             text: labels.slice(0,10).reverse(),
             type: "bar",
