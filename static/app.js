@@ -38,7 +38,7 @@ d3.json("static/samples.json").then(data => {
         title:"Top 10 Bacteria Cultures Found",
         margin: { t:30, l: 150}
     };
-    Plotly.newPlot("bar", bar_data, barlayout)
+    Plotly.newPlot("bar", bardata, barlayout)
 })};
 
 function Metadata(sample) {
